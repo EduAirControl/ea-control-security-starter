@@ -33,6 +33,6 @@ jobs:
           </settings>
           EOF
       - name: Build and publish to GitHub Packages
-        run: ./mvnw -B deploy -DskipTests
+        run: chmod +x mvnw && ./mvnw -B deploy -DskipTests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
